@@ -1,5 +1,4 @@
 # NVD River for ElasticSearch
-=============================
 
 Welcome to the NVD River Plugin for [Elasticsearch](http://www.elasticsearch.org/). The purpose of
 this plugin is to read the CVE vulnerability XML feeds of the National Vulnerability Database and push 
@@ -7,7 +6,6 @@ it into ElasticSearch. Another purpose was to learn ElasticSearch and get some h
 
 
 ## Versions
------------
 
 * For 1.3.x elasticsearch versions, look at [master branch](https://github.com/frosenberg/elasticsearch-nvd-river/tree/master).
 
