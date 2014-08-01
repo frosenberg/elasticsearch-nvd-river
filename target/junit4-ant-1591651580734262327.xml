@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="junit4-maven-synthetic" default="__default__">
+  <!--Define JUnit4 task and data types.-->
+  <taskdef resource="com/carrotsearch/junit4/antlib.xml">
+    <classpath>
+      <pathelement location="/Users/florian/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.12/junit4-ant-2.0.12.jar"/>
+    </classpath>
+    <classpath>
+      <pathelement location="/Users/florian/.m2/repository/junit/junit/4.10/junit-4.10.jar"/>
+      <pathelement location="/Users/florian/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
+    </classpath>
+  </taskdef>
+  <!--Invoke JUnit4 task.-->
+  <target name="__default__">
+    <junit4 dir="/Users/florian/Code/elasticsearch-nvd-river/target" tempDir="/Users/florian/Code/elasticsearch-nvd-river/target" parallelism="1" jvm="java" jvmOutputAction="pipe,warn" heartbeat="20" shuffleOnSlave="true" printSummary="true" isolateWorkingDirectories="true" haltOnFailure="true" leaveTemporary="true" dynamicAssignmentRatio="0.25" sysouts="false">
+      <jvmarg value="-Xmx512m"/>
+      <jvmarg value="-XX:MaxDirectMemorySize=512m"/>
+      <jvmarg value="-Des.logger.prefix="/>
+      <sysproperty key="es.logger.level" value="INFO"/>
+      <sysproperty key="es.node.local" value=""/>
+      <sysproperty key="es.node.mode" value=""/>
+      <sysproperty key="java.awt.headless" value="true"/>
+      <sysproperty key="tests.awaitsfix" value=""/>
+      <sysproperty key="tests.badapples" value=""/>
+      <sysproperty key="tests.class" value=""/>
+      <sysproperty key="tests.client.ratio" value=""/>
+      <sysproperty key="tests.cluster_seed" value=""/>
+      <sysproperty key="tests.failfast" value=""/>
+      <sysproperty key="tests.integration" value=""/>
+      <sysproperty key="tests.iters" value=""/>
+      <sysproperty key="tests.maxfailures" value=""/>
+      <sysproperty key="tests.method" value=""/>
+      <sysproperty key="tests.nightly" value=""/>
+      <sysproperty key="tests.showSuccess" value=""/>
+      <sysproperty key="tests.slow" value=""/>
+      <sysproperty key="tests.timeoutSuite" value=""/>
+      <sysproperty key="tests.weekly" value=""/>
+      <!--Test classes search paths and patterns.-->
+      <fileset dir="/Users/florian/Code/elasticsearch-nvd-river/target/test-classes">
+        <patternset>
+          <include name="**/*Tests.class"/>
+          <include name="**/*Test.class"/>
+          <exclude name="**/Abstract*.class"/>
+          <exclude name="**/*StressTest.class"/>
+        </patternset>
+      </fileset>
+      <!--Runtime classpath.-->
+      <classpath>
+        <!--Test classes directory.-->
+        <pathelement location="/Users/florian/Code/elasticsearch-nvd-river/target/test-classes"/>
+        <!--Test classes directory.-->
+        <pathelement location="/Users/florian/Code/elasticsearch-nvd-river/target/classes"/>
+        <!--Project dependencies.-->
+        <!--Dependency artifact: org.apache.lucene:lucene-test-framework:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-test-framework/4.9.0/lucene-test-framework-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-codecs:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-codecs/4.9.0/lucene-codecs-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-core:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-core/4.9.0/lucene-core-4.9.0.jar"/>
+        <!--Dependency artifact: com.carrotsearch.randomizedtesting:junit4-ant:jar:2.1.3-->
+        <pathelement location="/Users/florian/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.1.3/junit4-ant-2.1.3.jar"/>
+        <!--Dependency artifact: com.carrotsearch.randomizedtesting:randomizedtesting-runner:jar:2.1.3-->
+        <pathelement location="/Users/florian/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.1.3/randomizedtesting-runner-2.1.3.jar"/>
+        <!--Dependency artifact: junit:junit:jar:4.10-->
+        <pathelement location="/Users/florian/.m2/repository/junit/junit/4.10/junit-4.10.jar"/>
+        <!--Dependency artifact: org.apache.ant:ant:jar:1.8.2-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/ant/ant/1.8.2/ant-1.8.2.jar"/>
+        <!--Dependency artifact: org.elasticsearch:elasticsearch:jar:1.3.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/elasticsearch/elasticsearch/1.3.0/elasticsearch-1.3.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-analyzers-common:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.9.0/lucene-analyzers-common-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-queries:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-queries/4.9.0/lucene-queries-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-memory:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-memory/4.9.0/lucene-memory-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-highlighter:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-highlighter/4.9.0/lucene-highlighter-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-queryparser:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-queryparser/4.9.0/lucene-queryparser-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-sandbox:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-sandbox/4.9.0/lucene-sandbox-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-suggest:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-suggest/4.9.0/lucene-suggest-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-misc:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-misc/4.9.0/lucene-misc-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-join:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-join/4.9.0/lucene-join-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-grouping:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-grouping/4.9.0/lucene-grouping-4.9.0.jar"/>
+        <!--Dependency artifact: org.apache.lucene:lucene-spatial:jar:4.9.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/lucene/lucene-spatial/4.9.0/lucene-spatial-4.9.0.jar"/>
+        <!--Dependency artifact: com.spatial4j:spatial4j:jar:0.4.1-->
+        <pathelement location="/Users/florian/.m2/repository/com/spatial4j/spatial4j/0.4.1/spatial4j-0.4.1.jar"/>
+        <!--Dependency artifact: org.antlr:antlr-runtime:jar:3.5-->
+        <pathelement location="/Users/florian/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar"/>
+        <!--Dependency artifact: org.ow2.asm:asm:jar:4.1-->
+        <pathelement location="/Users/florian/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar"/>
+        <!--Dependency artifact: org.ow2.asm:asm-commons:jar:4.1-->
+        <pathelement location="/Users/florian/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar"/>
+        <!--Dependency artifact: org.apache.logging.log4j:log4j-api:jar:2.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/logging/log4j/log4j-api/2.0/log4j-api-2.0.jar"/>
+        <!--Dependency artifact: org.apache.logging.log4j:log4j-core:jar:2.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/apache/logging/log4j/log4j-core/2.0/log4j-core-2.0.jar"/>
+        <!--Dependency artifact: org.elasticsearch:elasticsearch:test-jar:tests:1.3.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/elasticsearch/elasticsearch/1.3.0/elasticsearch-1.3.0-tests.jar"/>
+        <!--Dependency artifact: org.hamcrest:hamcrest-core:jar:1.3.RC2-->
+        <pathelement location="/Users/florian/.m2/repository/org/hamcrest/hamcrest-core/1.3.RC2/hamcrest-core-1.3.RC2.jar"/>
+        <!--Dependency artifact: org.hamcrest:hamcrest-library:jar:1.3.RC2-->
+        <pathelement location="/Users/florian/.m2/repository/org/hamcrest/hamcrest-library/1.3.RC2/hamcrest-library-1.3.RC2.jar"/>
+        <!--Dependency artifact: org.eclipse.persistence:org.eclipse.persistence.moxy:jar:2.5.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.5.0/org.eclipse.persistence.moxy-2.5.0.jar"/>
+        <!--Dependency artifact: org.eclipse.persistence:org.eclipse.persistence.core:jar:2.5.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.5.0/org.eclipse.persistence.core-2.5.0.jar"/>
+        <!--Dependency artifact: org.eclipse.persistence:org.eclipse.persistence.asm:jar:2.5.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.5.0/org.eclipse.persistence.asm-2.5.0.jar"/>
+        <!--Dependency artifact: org.eclipse.persistence:org.eclipse.persistence.antlr:jar:2.5.0-->
+        <pathelement location="/Users/florian/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.antlr/2.5.0/org.eclipse.persistence.antlr-2.5.0.jar"/>
+        <!--Additional classpath elements.-->
+      </classpath>
+      <listeners> 
+        <report-ant-xml mavenExtensions="true" dir="/Users/florian/Code/elasticsearch-nvd-river/target/surefire-reports"/>  
+        <report-text showStatusError="true" showStatusFailure="true" showOutput="onerror" timestamps="false" showSuiteSummary="true" showStackTraces="true" showStatusOk="false" showStatusIgnored="true" showThrowable="true"/>  
+        <report-execution-times file="/Users/florian/Code/elasticsearch-nvd-river/.local-execution-hints.log"/> 
+      </listeners>
+      <assertions> 
+        <enable/> 
+      </assertions>
+      <balancers> 
+        <execution-times> 
+          <fileset includes=".local-execution-hints.log" dir="/Users/florian/Code/elasticsearch-nvd-river"/> 
+        </execution-times> 
+      </balancers>
+    </junit4>
+  </target>
+</project>

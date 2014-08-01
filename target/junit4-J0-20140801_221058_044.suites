@@ -1,0 +1,2 @@
+org.elasticsearch.river.nvd.NvdXmlTest
+org.elasticsearch.river.nvd.NvdRiverIntegrationTest
